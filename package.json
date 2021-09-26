@@ -1,0 +1,14 @@
+{
+  "name": "412-handler",
+  "version": "0.0.1",
+  "description": "Automate the renaming of .412 files to jpg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "412"
+  ],
+  "author": "Noah Hayling",
+  "license": "ISC"
+}
