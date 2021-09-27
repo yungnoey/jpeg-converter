@@ -8,14 +8,18 @@ let directory = __dirname;
 // build paths
 let rawPath = path.join(directory, "/raw");
 let exportPath = path.join(directory, "/export");
-let utilPath = path.join(directory, "util");
 
 // start up message
 console.log("Conversion Started...");
 
 // remove .gitignore files
-fs.unlinkSync(path.join(rawPath, ".gitignore"));
-fs.unlinkSync(path.join(exportPath, ".gitignore"));
+if (fs.existsSync(path.join(rawPath, ".gitignore"))) {
+  fs.unlinkSync(path.join(rawPath, ".gitignore"));
+}
+
+if (fs.existsSync(path.join(exportPath, ".gitignore"))) {
+  fs.unlinkSync(path.join(exportPath, ".gitignore"));
+}
 
 // convert files
 fs.readdir(rawPath, (err, files) => {
